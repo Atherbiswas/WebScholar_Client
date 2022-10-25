@@ -1,7 +1,8 @@
 import React from 'react';
 import bannerImg from '../../../caurosel img/banner.png';
 import Button from 'react-bootstrap/Button';
-import './Banner.css'
+import './Banner.css';
+import { FaArrowCircleRight} from 'react-icons/fa';
 
 const Banner = () => {
     return (
@@ -17,7 +18,7 @@ const Banner = () => {
                     <div className='banner-text'>
                         <h2 className='fs-1'>We Provide Best Quality <br />Course Ever </h2>
                         <p className='fs-5'>We assure that we have trained educator and we provide best course than other.we are insure that if a student take this course course.They will benefited than other.</p>
-                        <Button variant="warning" size="lg" className='fw-bolder'>LEARN MORE</Button>
+                        <Button variant="warning" size="lg" className='fw-bolder'>LEARN MORE <FaArrowCircleRight></FaArrowCircleRight> </Button>
                     </div>
                 </div>
             </div>
