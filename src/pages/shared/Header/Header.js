@@ -10,7 +10,7 @@ import logo from '../../../site-logo.png'
 
 const Header = () => {
     return (
-        <Navbar bg="info" expand="lg">
+        <Navbar bg="info" expand="lg" className='sticky-top'>
       <Container>
         <Navbar.Brand href="#home">
             <Image style={{width: '35px'}} roundedCircle src={logo}></Image>

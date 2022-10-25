@@ -1,0 +1,15 @@
+#form-area {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subscribe-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ div#form-area form input {
+    padding: 4px;
+    border: none;
+}

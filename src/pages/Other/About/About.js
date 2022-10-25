@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div className='container section-padding'>
             <h1 className='text-center mb-3'>Our Manngement</h1>
-            <div className='row'>
+            <div className='row g-3'>
                 <div className='col-lg-4 col-md-4 col-12'>
                     <div className='text-center bg-about p-1 rounded-4'>
                     <div><FaBookOpen className='fs-1'></FaBookOpen></div>

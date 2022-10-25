@@ -5,7 +5,7 @@ const Faq = () => {
     return (
         <div className='container section-padding'>
             <h1 className='text-center'>Frequently Asked Question (FAQ)</h1>
-            <Accordion className='w-75 mx-auto mt-2'>
+            <Accordion className='w-75 mx-auto mt-4'>
       <Accordion.Item eventKey="0">
         <Accordion.Header>
             <h5>Who are these courses for?</h5>
