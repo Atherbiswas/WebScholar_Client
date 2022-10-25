@@ -6,6 +6,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div className='container section-padding'>
+            <h1 className='text-center mb-4'>About US</h1>
             <div className='row'>
                 <div className='col-lg-6 col-md-12 col-12'>
                     <div className='banner-img'>

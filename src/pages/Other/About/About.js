@@ -4,6 +4,7 @@ import { FaBookOpen, FaUserTie, FaUserFriends } from 'react-icons/fa';
 const About = () => {
     return (
         <div className='container section-padding'>
+            <h1 className='text-center mb-3'>Our Manngement</h1>
             <div className='row'>
                 <div className='col-lg-4 col-md-4 col-12'>
                     <div className='text-center bg-info p-1 rounded-4'>
