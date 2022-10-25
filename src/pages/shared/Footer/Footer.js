@@ -40,6 +40,7 @@ const Footer = () => {
 
                     </Col>
                 </Row>
+                <p className='text-center mt-3'>Copyright@2022.All right reserved webscholar.com</p>
             </Container>
         </div>
     );
