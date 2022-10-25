@@ -1,47 +1,43 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import img1 from '../../../caurosel img/carousel-1.jpg';
-import img2 from '../../../caurosel img/carousel-2.jpg'
+import img2 from '../../../caurosel img/carousel-2.jpg';
+import img3 from '../../../caurosel img/carousel-3.jpg';
+import Button from 'react-bootstrap/Button';
+import './CarouselSlide.css'
 
 
 const CarouselSlide = () => {
     return (
-        <Carousel>
-      <Carousel.Item>
+        <Carousel className='container section-padding'>
+      <Carousel.Item className='carousel-item'>
         <img
+        style={{height: '500px'}}
           className="d-block w-100"
-          src={img1}
+          src={img3}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption className='carousel-caption'>
+          <h4>Learning New Things With WEBSCHOLAR</h4>
+          <p>WEBSCHOLAR is as like a online school.Here student take different courses with interesting environment.</p>
+          <Button variant="warning" size="lg">
+          ENROLL NOW
+        </Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
+         style={{height: '500px'}}
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src={img2}
           alt="Second slide"
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h4>Learning New Things With WEBSCHOLAR</h4>
+          <p>WEBSCHOLAR is as like a online school.Here student take different courses with interesting environment.</p>
+          <Button variant="warning" size="lg">
+          ENROLL NOW
+        </Button>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
