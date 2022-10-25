@@ -19,7 +19,7 @@ const CarouselSlide = () => {
         <Carousel.Caption className='carousel-caption'>
           <h4>Learning New Things With WEBSCHOLAR</h4>
           <p>WEBSCHOLAR is as like a online school.Here student take different courses with interesting environment.</p>
-          <Button variant="warning" size="lg">
+          <Button variant="warning" size="lg" className='fw-bolder'>
           ENROLL NOW
         </Button>
         </Carousel.Caption>
@@ -35,7 +35,7 @@ const CarouselSlide = () => {
         <Carousel.Caption>
           <h4>Learning New Things With WEBSCHOLAR</h4>
           <p>WEBSCHOLAR is as like a online school.Here student take different courses with interesting environment.</p>
-          <Button variant="warning" size="lg">
+          <Button variant="warning" size="lg" className='fw-bolder'>
           ENROLL NOW
         </Button>
         </Carousel.Caption>
