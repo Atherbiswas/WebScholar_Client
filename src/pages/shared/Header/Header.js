@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <Navbar bg="info" expand="lg" className='sticky-top'>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand to="/">
             <Image style={{width: '35px'}} roundedCircle src={logo}></Image>
             WEBSCHOLAR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
