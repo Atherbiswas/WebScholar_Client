@@ -25,10 +25,10 @@ const Login = () => {
                 <p className='mt-2'>Don't have account?Please<Link to='/register'><span className='text-light'>Register</span> </Link> </p>
                 <hr />
                 <Button variant="warning" className='w-100 mb-2 fs-5 fw-semibold' type="submit">
-                    <FaGoogle></FaGoogle> Login with Google
+                    <FaGoogle></FaGoogle> Login with Google account
                 </Button>
                 <Button variant="warning" className='w-100 fs-5 fw-semibold' type="submit">
-                    <FaGithub></FaGithub> Login with Github
+                    <FaGithub></FaGithub> Login with Github account
                 </Button>
             </Form>
         </div>

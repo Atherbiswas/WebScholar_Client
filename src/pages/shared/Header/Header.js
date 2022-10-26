@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,9 +6,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from '../../../site-logo.png'
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const Header = () => {
+  const {user} = useContext(AuthContext);
     return (
         <Navbar bg="info" expand="lg" className='sticky-top'>
       <Container>
@@ -24,6 +26,7 @@ const Header = () => {
             <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/login">Login</NavLink>
             <NavLink to="/register">Register</NavLink>
+            <span>{user?.displayName}</span>
           </Nav>
         </Navbar.Collapse>
       </Container>
