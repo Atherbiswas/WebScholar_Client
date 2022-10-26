@@ -1,10 +1,24 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import LeftSide from '../Leftside/LeftSide';
+import RightSide from '../RightSide/RightSide';
 
 const Courses = () => {
     return (
-        <div>
-            <h1>This is course page</h1>
-        </div>
+        <Container>
+      <Row>
+        <Col lg="4" sm="12">
+            <p>Left side</p>
+            <LeftSide></LeftSide>
+            </Col>
+        <Col lg="8" sm="12">
+             <p>Right side</p>
+             <RightSide></RightSide> 
+             </Col>
+      </Row>
+    </Container>
     );
 };
 
