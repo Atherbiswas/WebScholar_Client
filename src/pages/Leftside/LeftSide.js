@@ -16,8 +16,10 @@ const LeftSide = () => {
             <h3>Total courses: {courses.length}</h3>
             <div>
                 {
-                    courses.map(course => <p key={course._id}>
-                        <Link to={`/courses/${course._id}`}>{course.course_name}</Link>
+                    courses.map(course =><p 
+                    key={course._id}
+                    >
+                        <Link className='btn btn-warning w-50' to={`/courses/${course._id}`}>{course.course_name}</Link>
                     </p>)
                 }
             </div>

@@ -4,18 +4,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LeftSide from '../Leftside/LeftSide';
 import RightSide from '../RightSide/RightSide';
+import { useLoaderData } from 'react-router-dom';
 
 const Courses = () => {
+  const courses = useLoaderData();
     return (
         <Container>
       <Row>
         <Col lg="4" sm="12">
-            <p>Left side</p>
             <LeftSide></LeftSide>
             </Col>
         <Col lg="8" sm="12">
-             <p>Right side</p>
-             <RightSide></RightSide> 
+          <Row className='g-4'>
+             {
+                courses.map(course => <RightSide
+                key={course._id}
+                course={course}
+                ></RightSide>)
+             }
+          </Row>
              </Col>
       </Row>
     </Container>

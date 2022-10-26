@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { FaFacebook, FaYoutube, FaLinkedin, FaWhatsappSquare } from 'react-icons/fa';
 import './Footer.css'
 import Form from 'react-bootstrap/Form';
+import logo from '../Footer/payment.png'
 
 const Footer = () => {
     return (
@@ -39,7 +40,9 @@ const Footer = () => {
                         </Form>
 
                     </Col>
+                    <img src={logo} className='img-fluid mt-2' alt="" />
                 </Row>
+                
                 <p className='text-center mt-3'>Copyright@2022.All right reserved webscholar.com</p>
             </Container>
         </div>
