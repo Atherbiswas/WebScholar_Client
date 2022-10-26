@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Image } from 'react-bootstrap';
+import { FaUserAlt } from 'react-icons/fa';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -27,6 +28,9 @@ const Header = () => {
             <NavLink to="/login">Login</NavLink>
             <NavLink to="/register">Register</NavLink>
             <span>{user?.displayName}</span>
+            <span>
+              {user?.photoURL? <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image> : <FaUserAlt></FaUserAlt>  }
+            </span>
           </Nav>
         </Navbar.Collapse>
       </Container>
