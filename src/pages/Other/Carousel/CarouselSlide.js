@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import './CarouselSlide.css'
 
 
+
 const CarouselSlide = () => {
     return (
         <Carousel className='container section-padding'>
