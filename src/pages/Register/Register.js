@@ -1,9 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
     //to get form data
     const handleRegister = (event) => {
         event.preventDefault();
@@ -13,6 +16,13 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name,photoURL,email,password);
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            form.reset();
+        })
+        .catch(error => console.error(error))
     }
     return (
         <div className='container d-flex mt-3'>

@@ -6,7 +6,7 @@ import Courses from "../../pages/Courses/Courses";
 import Faq from "../../pages/Faq/Faq";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
-import Register from "../../pages/Register.js/Register";
+import Register from "../../pages/Register/Register";
 
 export const routes = createBrowserRouter([
     {
