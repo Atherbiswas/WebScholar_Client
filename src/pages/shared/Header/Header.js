@@ -31,6 +31,7 @@ const Header = () => {
             <NavLink to="/courses">Courses</NavLink>
             <NavLink to="faq">FAQ</NavLink>
             <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/*">Feedback</NavLink>
             <NavLink>
               {
                 user?.uid ?
