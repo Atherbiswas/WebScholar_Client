@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -6,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const [error, setError] = useState('');
     const {createUser} = useContext(AuthContext);
     //to get form data
     const handleRegister = (event) => {
@@ -21,8 +23,12 @@ const Register = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            setError('');
         })
-        .catch(error => console.error(error))
+        .catch(error => {
+            console.error(error);
+            setError(error.message);
+        })
     }
     return (
         <div className='container d-flex mt-3'>
@@ -30,7 +36,7 @@ const Register = () => {
             <h1 className='text-center'>Register Now!!</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
-                <Form.Control name="name" type="text" placeholder="Enter your name" required/>
+                <Form.Control name="name" type="text" placeholder="Enter your name"/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -48,6 +54,7 @@ const Register = () => {
                     Register
                 </Button>
                 <p className='mt-2'>Already have an account?Please<Link to='/login'><span className='text-light'>Login</span> </Link> </p>
+                <p className='text-danger'>{error}</p>
             </Form>
         </div>
     );

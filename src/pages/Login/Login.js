@@ -3,14 +3,18 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { useState } from 'react';
 
 
 const Login = () => {
-    const {providerLogin} = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const {providerLogin, signIn} = useContext(AuthContext);
+
+    const navigate = useNavigate()
 
     //getdata from the form
     const handleLogin = (event) => {
@@ -19,6 +23,19 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
+        signIn(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            form.reset();
+            setError('');
+            navigate('/');
+        })
+        .catch(error => {
+        console.error(error);
+        setError(error.message)
+    })
+            
     }
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () =>{
@@ -27,7 +44,10 @@ const Login = () => {
             const user = result.user;
             console.log(user);
         })
-        .catch( error => console.error(error))
+        .catch( error => {
+            console.error(error);
+            
+        })
     }
 
     return (
@@ -46,6 +66,7 @@ const Login = () => {
                     Login
                 </Button>
                 <p className='mt-2'>Don't have account?Please<Link to='/register'><span className='text-light'>Register</span> </Link> </p>
+                <p className='text-danger'>{error}</p>
                 <hr />
                 <p className='text-center'> --or-- </p>
                 <Button onClick={handleGoogleSignIn} variant="warning" className='w-100 mb-2 fs-5 fw-semibold' type="submit">
