@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Image } from 'react-bootstrap';
-import { FaUserAlt } from 'react-icons/fa';
+import { FaUserAlt, FaToggleOn } from 'react-icons/fa';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -45,8 +45,9 @@ const Header = () => {
               }
               </NavLink>
             <span className='mt-2'>
-              {user?.photoURL? <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image> : <FaUserAlt></FaUserAlt>  }
+              {user?.photoURL? <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image> : <FaUserAlt className='fs-4'></FaUserAlt>  }
             </span>
+            <NavLink> <FaToggleOn className='fs-2'></FaToggleOn> </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
