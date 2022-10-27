@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
+
+    const navigate = useNavigate()
     //to get form data
     const handleRegister = (event) => {
         event.preventDefault();
@@ -22,13 +24,26 @@ const Register = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
-            form.reset();
             setError('');
+            form.reset();
+            handleupdateUserProfile(name, photoURL);
+            navigate('/');
         })
         .catch(error => {
             console.error(error);
             setError(error.message);
         })
+    }
+
+    const handleupdateUserProfile =(name, photoURL) => {
+        const profile= {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+        .then( () => {})
+        .catch(error => console.error(error))
+
     }
     return (
         <div className='container d-flex mt-3'>
