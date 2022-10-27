@@ -6,7 +6,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
@@ -42,6 +42,7 @@ const Login = () => {
     })
             
     }
+    //google login
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () =>{
         providerLogin(googleProvider)
@@ -55,7 +56,16 @@ const Login = () => {
             
         })
     }
-
+    //git hub login
+    const gitHubProvider = new GithubAuthProvider();
+    const handleGitHubSigIn = () => {
+        providerLogin(gitHubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error))
+    }
     return (
         <div className='container d-flex mt-5'>
             <Form onSubmit={handleLogin} className='form-container'>
@@ -77,7 +87,7 @@ const Login = () => {
                 <Button onClick={handleGoogleSignIn} variant="warning" className='w-100 mb-2 fs-5 fw-semibold' type="submit">
                     <FaGoogle></FaGoogle> Login with Google account
                 </Button>
-                <Button variant="warning" className='w-100 fs-5 fw-semibold' type="submit">
+                <Button onClick={handleGitHubSigIn} variant="warning" className='w-100 fs-5 fw-semibold' type="submit">
                     <FaGithub></FaGithub> Login with Github account
                 </Button>
             </Form>
