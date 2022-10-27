@@ -44,9 +44,9 @@ const Header = () => {
                 </>
               }
               </NavLink>
-            <span className='mt-2'>
+            <NavLink>
               {user?.photoURL? <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image> : <FaUserAlt className='fs-4'></FaUserAlt>  }
-            </span>
+            </NavLink>
             <NavLink> <FaToggleOn className='fs-2'></FaToggleOn> </NavLink>
           </Nav>
         </Navbar.Collapse>
