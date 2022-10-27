@@ -8,6 +8,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
@@ -32,11 +33,12 @@ const Login = () => {
             console.log(user);
             form.reset();
             setError('');
+            toast.success('Login successfull!')
             navigate(from, {replace: true});
         })
         .catch(error => {
         console.error(error);
-        setError(error.message)
+        setError(toast.error(error.message));
     })
             
     }
@@ -69,7 +71,6 @@ const Login = () => {
                     Login
                 </Button>
                 <p className='mt-2'>Don't have account?Please<Link to='/register'><span className='text-light'>Register</span> </Link> </p>
-                <p className='text-danger'>{error}</p>
                 <hr />
                 <p className='text-center'> --or-- </p>
                 <Button onClick={handleGoogleSignIn} variant="warning" className='w-100 mb-2 fs-5 fw-semibold' type="submit">

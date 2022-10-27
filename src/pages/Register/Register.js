@@ -3,12 +3,13 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const {createUser, updateUserProfile} = useContext(AuthContext);
+    const {createUser, updateUserProfile, userEmailVerify} = useContext(AuthContext);
 
     const navigate = useNavigate()
     //to get form data
@@ -27,11 +28,13 @@ const Register = () => {
             setError('');
             form.reset();
             handleupdateUserProfile(name, photoURL);
+            emailVerification();
+            toast.success('Registration successfull! We sent a verification mail.Please verify your email address.')
             navigate('/');
         })
         .catch(error => {
             console.error(error);
-            setError(error.message);
+            setError(toast.error(error.message));
         })
     }
 
@@ -44,6 +47,12 @@ const Register = () => {
         .then( () => {})
         .catch(error => console.error(error))
 
+    }
+
+    const emailVerification = () => {
+        userEmailVerify()
+        .then( () => {})
+        .catch(error => console.error(error))
     }
     return (
         <div className='container d-flex mt-3'>
@@ -69,7 +78,6 @@ const Register = () => {
                     Register
                 </Button>
                 <p className='mt-2'>Already have an account?Please<Link to='/login'><span className='text-light'>Login</span> </Link> </p>
-                <p className='text-danger'>{error}</p>
             </Form>
         </div>
     );
