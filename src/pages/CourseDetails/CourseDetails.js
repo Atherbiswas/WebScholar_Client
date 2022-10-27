@@ -20,7 +20,9 @@ const CourseDetails = () => {
           <h6>Price: {price}</h6>
           <h6>Rating: {rating}</h6>
         </Card.Text>
-        <Link to='/courses' className='btn btn-warning'>Back</Link>
+        <Link to='/courses' className='btn btn-warning mx-2'>Back</Link>
+        <Link to='/enroll' className='btn btn-warning'>Enroll Now</Link>
+        
       </Card.Body>
     </Card>
         </div>

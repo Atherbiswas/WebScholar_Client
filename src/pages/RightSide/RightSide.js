@@ -20,7 +20,7 @@ const RightSide = ({course}) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-        <Button variant="outline-warning" className='w-100 text-dark fw-bold fs-5'>Enroll Now</Button>
+        <Button  variant="outline-warning" className='w-100 text-dark '> <Link to='/enroll' className='btn fw-bold fs-6'>Enroll Now</Link> </Button>
         </Card.Footer>
       </Card>
         </Col>

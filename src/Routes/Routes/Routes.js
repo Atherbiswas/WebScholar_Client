@@ -6,7 +6,9 @@ import Courses from "../../pages/Courses/Courses";
 import Faq from "../../pages/Faq/Faq";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
+import Enroll from "../../pages/Other/Enroll/Enroll";
 import Register from "../../pages/Register/Register";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
     {
@@ -42,6 +44,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: 'enroll',
+                element: <PrivateRoutes><Enroll></Enroll></PrivateRoutes>
             }
         ]
     }

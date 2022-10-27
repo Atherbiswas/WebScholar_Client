@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -14,7 +14,10 @@ const Login = () => {
     const [error, setError] = useState('');
     const {providerLogin, signIn} = useContext(AuthContext);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     //getdata from the form
     const handleLogin = (event) => {
@@ -29,7 +32,7 @@ const Login = () => {
             console.log(user);
             form.reset();
             setError('');
-            navigate('/');
+            navigate(from, {replace: true});
         })
         .catch(error => {
         console.error(error);
