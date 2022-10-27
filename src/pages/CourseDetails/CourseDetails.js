@@ -11,7 +11,7 @@ const CourseDetails = () => {
 
     const pdfGenerator = () => {
       const doc = new jsPDF();
-      doc.text("W E B S C H O L A R", 10, 10);
+      doc.text("W E L C O M E-W E B S C H O L A R", 10, 10);
       doc.save("Course.pdf");
     }
     return (
